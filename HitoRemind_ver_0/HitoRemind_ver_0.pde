@@ -1,7 +1,8 @@
 int state=1;
+  int oekakiTime;
 
-int sketch_x=50;
-int sketch_y=50;
+int sketch_x=100;
+int sketch_y=200;
 int sketch_height=300;
 int sketch_width=300;
 
