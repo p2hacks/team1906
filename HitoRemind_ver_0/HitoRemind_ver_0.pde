@@ -1,7 +1,40 @@
 int state;
 
+int sketch_x=50;
+int sketch_y=50;
+int sketch_height=300;
+int sketch_width=300;
+
+int window_size_x=500;
+int window_size_y=700;
+
+boolean record_sketch=false;
+boolean record_end=false;
+
+PShape back;
+
+PImage img;
+
 void setup(){
   size(500,700);
+  background(255);
+  
+    back=createShape(); 
+  back.beginShape();
+  back.vertex(0, 0);
+  back.vertex(window_size_x, 0);
+  back.vertex(window_size_x, window_size_y);
+  back.vertex(0, window_size_y);
+  back.vertex(0, 0);
+  back.beginContour();
+  back.vertex(sketch_x, sketch_y);
+  back.vertex(sketch_x, sketch_y+sketch_height);
+  back.vertex(sketch_x+sketch_width, sketch_y+sketch_height);
+  back.vertex(sketch_x+sketch_width, sketch_y);
+  back.vertex(sketch_x, sketch_y);
+  back.endContour();
+  back.endShape(CLOSE);
+  
 }
 
 void draw(){
@@ -27,6 +60,17 @@ void draw(){
     case 4:
     stateNow = inputHito();
     break;
+    
+    case 5:
+    stateNow = oekaki();
+    break;
+    
   }
    state = stateNow;
+}
+
+void keyPressed() {
+  if (keyCode==ENTER) {
+    record_sketch=true;
+  }
 }
