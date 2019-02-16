@@ -1,4 +1,4 @@
-int state;
+int state=1;
 
 int sketch_x=50;
 int sketch_y=50;
@@ -15,9 +15,14 @@ PShape back;
 
 PImage img;
 
+PFont font;
+
 void setup(){
   size(500,700);
   background(255);
+  
+  font = createFont("MS Gothic", 15, true);
+  textFont(font);
   
     back=createShape(); 
   back.beginShape();
@@ -74,3 +79,7 @@ void keyPressed() {
     record_sketch=true;
   }
 }
+
+void mousePressed(){
+}
+  
