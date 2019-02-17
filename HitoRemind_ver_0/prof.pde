@@ -37,6 +37,13 @@ int prof() {
   rect(100,0,100,70);
   
   text("プロフィール",250,300);
+//  imageMode(CENTER);
+ // image(img2,100,650);
+//  if(mousePressed && (mouseX >= 25 && mouseX <= 175 && mouseY >= 625 && mouseY <= 675)){
+    if(mousePressed && (mouseX >= 50-37.5 && mouseX <= 50-37.5+75 && mouseY >= 680-12.5 && mouseY <= 680-25+25)){
 
+  return 0;
+}
+  
   return 2;
 }

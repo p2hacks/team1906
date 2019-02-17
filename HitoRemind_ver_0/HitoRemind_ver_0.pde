@@ -1,5 +1,6 @@
-int state=1;
-  int oekakiTime;
+int state=0;
+int oekakiTime;
+float a = 0; //スタートの色の濃さ
 
 int sketch_x=100;
 int sketch_y=200;
@@ -14,18 +15,20 @@ boolean record_end=false;
 
 PShape back;
 
-PImage img;
+PImage img,img1,img2;
 
 PFont font;
 
 void setup(){
+  img1 = loadImage("logo1.PNG");
+  img2 = loadImage("logo3.PNG");
   size(500,700);
   background(255);
   
   font = createFont("MS Gothic", 15, true);
   textFont(font);
   
-    back=createShape(); 
+  back=createShape(); 
   back.beginShape();
   back.vertex(0, 0);
   back.vertex(window_size_x, 0);
@@ -73,6 +76,10 @@ void draw(){
     
   }
    state = stateNow;
+   if(state != 0){
+  imageMode(CENTER);
+  image(img2,50,680);
+   }
 }
 
 void keyPressed() {

@@ -41,6 +41,13 @@ int inputHito(){
   fill(0);
   textSize(30);
   text_box();
+//  imageMode(CENTER);
+ // image(img2,100,650);
+ // if(mousePressed && (mouseX >= 25 && mouseX <= 175 && mouseY >= 625 && mouseY <= 675)){
+    if(mousePressed && (mouseX >= 50-37.5 && mouseX <= 50-37.5+75 && mouseY >= 680-12.5 && mouseY <= 680-25+25)){
+
+   return 0;
+}
   
   return 4;
 }
@@ -48,6 +55,6 @@ int inputHito(){
 void text_box(){
   text("名前",50,140);  
   fill(255);
-  rect(50,150,400,30);
+//  rect(50,150,400,30);
 }
   
